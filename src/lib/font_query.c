@@ -15,7 +15,7 @@
 #include "rgbadraw.h"
 #include "rotate.h"
 
-extern FT_Library   ft_lib;
+extern TLS FT_Library   ft_lib;
 
 /* string extents */
 void

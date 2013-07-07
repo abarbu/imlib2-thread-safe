@@ -342,8 +342,8 @@ nc = (tmp | (-(tmp >> 8))) & (~(tmp >> 9));
 tmp = (cc) + (((c) - 127) << 1); \
 nc = (tmp | (-(tmp >> 8))) & (~(tmp >> 9));
 
-extern int pow_lut_initialized;
-extern DATA8 pow_lut[256][256];
+extern TLS int pow_lut_initialized;
+extern TLS DATA8 pow_lut[256][256];
 
 #define BLEND_DST_ALPHA(r1, g1, b1, a1, dest) \
 { DATA8 _aa; \

@@ -19,8 +19,8 @@
                 RESHADE_COLOR(G_VAL(dest), g, G_VAL(dest)); \
                 RESHADE_COLOR(B_VAL(dest), b, B_VAL(dest));
 
-int                 pow_lut_initialized = 0;
-DATA8               pow_lut[256][256];
+TLS int           pow_lut_initialized = 0;
+TLS DATA8         pow_lut[256][256];
 
 void
 __imlib_build_pow_lut(void)

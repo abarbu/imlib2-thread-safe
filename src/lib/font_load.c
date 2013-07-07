@@ -15,13 +15,13 @@
 #include "rgbadraw.h"
 #include "rotate.h"
 
-extern FT_Library   ft_lib;
+extern  TLS FT_Library   ft_lib;
 
-static int          font_cache_usage = 0;
-static int          font_cache = 0;
-static char       **fpath = NULL;
-static int          fpath_num = 0;
-static Imlib_Object_List *fonts = NULL;
+static TLS int          font_cache_usage = 0;
+static TLS int          font_cache = 0;
+static TLS char       **fpath = NULL;
+static TLS int          fpath_num = 0;
+static TLS Imlib_Object_List *fonts = NULL;
 
 static ImlibFont   *imlib_font_load(const char *name, int faceidx, int size);
 static int          font_modify_cache_cb(Imlib_Hash * hash, const char *key,

@@ -15,7 +15,7 @@
 #include "rgbadraw.h"
 #include "rotate.h"
 
-extern FT_Library   ft_lib;
+extern TLS FT_Library   ft_lib;
 
 Imlib_Font_Glyph   *
 imlib_font_cache_glyph_get(ImlibFont * fn, FT_UInt index)

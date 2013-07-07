@@ -29,7 +29,7 @@ typedef struct context {
    struct context     *next;
 } context;
 
-static context     *id3_ctxs = NULL;
+static TLS context     *id3_ctxs = NULL;
 
 static inline struct id3_frame *
 id3_tag_get_frame(struct id3_tag *tag, size_t index)

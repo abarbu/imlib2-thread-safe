@@ -14,13 +14,13 @@
 #include "loaderpath.h"
 #include "Imlib2.h"
 
-static ImlibImage  *images = NULL;
+static TLS ImlibImage  *images = NULL;
 
 #ifdef BUILD_X11
-static ImlibImagePixmap *pixmaps = NULL;
+static TLS ImlibImagePixmap *pixmaps = NULL;
 #endif
-static ImlibLoader *loaders = NULL;
-static int          cache_size = 4096 * 1024;
+static TLS ImlibLoader *loaders = NULL;
+static TLS int          cache_size = 4096 * 1024;
 
 /* attach a string key'd data and/or int value to an image that cna be */
 /* looked up later by its string key */
@@ -721,9 +721,9 @@ __imlib_ConsumeLoader(ImlibLoader * l)
 void
 __imlib_RescanLoaders(void)
 {
-   static time_t       last_scan_time = 0;
-   static time_t       last_modified_system_time = 0;
-   static int          scanned = 0;
+   static TLS time_t       last_scan_time = 0;
+   static TLS time_t       last_modified_system_time = 0;
+   static TLS int          scanned = 0;
    time_t              current_time;
    char                do_reload = 0;
 

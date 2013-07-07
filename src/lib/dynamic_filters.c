@@ -16,8 +16,8 @@
 #include "script.h"
 #include "loaderpath.h"
 
-pImlibExternalFilter filters = NULL;
-int                 dyn_initialised = 0;
+TLS pImlibExternalFilter filters = NULL;
+TLS int                 dyn_initialised = 0;
 
 #define MALLOCSHOW
 #define FREESHOW

@@ -21,23 +21,23 @@
 /* x86: RGBA in byte order = ABGR when read as an int (in register/int) */
 
 /* lookup table to see what color index to use */
-static DATA8       *_dither_color_lut;
-static DATA8        _pal_type;
+static TLS DATA8       *_dither_color_lut;
+static TLS DATA8        _pal_type;
 
 /* using DATA32 - major speedup for aligned memory reads */
 
 /* these data structs global rather than context-based for speed */
-static DATA16      *_dither_r16;
-static DATA16      *_dither_g16;
-static DATA16      *_dither_b16;
-static DATA8       *_dither_r8;
-static DATA8       *_dither_g8;
-static DATA8       *_dither_b8;
-static DATA8       *_dither_666r;
-static DATA8       *_dither_666g;
-static DATA8       *_dither_666b;
-static int          dither_a_init = 0;
-static DATA8        _dither_a1[8 * 8 * 256];
+static TLS DATA16      *_dither_r16;
+static TLS DATA16      *_dither_g16;
+static TLS DATA16      *_dither_b16;
+static TLS DATA8       *_dither_r8;
+static TLS DATA8       *_dither_g8;
+static TLS DATA8       *_dither_b8;
+static TLS DATA8       *_dither_666r;
+static TLS DATA8       *_dither_666g;
+static TLS DATA8       *_dither_666b;
+static TLS int          dither_a_init = 0;
+static TLS DATA8        _dither_a1[8 * 8 * 256];
 
 /* the famous dither matrix */
 const DATA8         _dither_44[4][4] = {

@@ -367,8 +367,8 @@ __imlib_FileModDate(const char *s)
 char               *
 __imlib_FileHomeDir(int uid)
 {
-   static int          usr_uid = -1;
-   static char        *usr_s = NULL;
+   static TLS int          usr_uid = -1;
+   static TLS char        *usr_s = NULL;
    char               *s;
    struct passwd      *pwd;
 

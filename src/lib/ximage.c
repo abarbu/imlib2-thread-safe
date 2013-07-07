@@ -8,20 +8,20 @@
 #include "ximage.h"
 
 /* global flags */
-signed char         x_does_shm = -1;
+TLS signed char         x_does_shm = -1;
 
 /* static private variables */
-static int          list_num = 0;
-static XImage     **list_xim = NULL;
-static XShmSegmentInfo **list_si = NULL;
-static Display    **list_d = NULL;
-static char        *list_used = NULL;
-static int          list_mem_use = 0;
-static int          list_max_mem = 1024 * 1024 * 1024;
-static int          list_max_count = 0;
+static TLS int          list_num = 0;
+static TLS XImage     **list_xim = NULL;
+static TLS XShmSegmentInfo **list_si = NULL;
+static TLS Display    **list_d = NULL;
+static TLS char        *list_used = NULL;
+static TLS int          list_mem_use = 0;
+static TLS int          list_max_mem = 1024 * 1024 * 1024;
+static TLS int          list_max_count = 0;
 
 /* temporary X error catcher we use later */
-static char         _x_err = 0;
+static TLS char         _x_err = 0;
 
 /* the function we use for catching the error */
 static int

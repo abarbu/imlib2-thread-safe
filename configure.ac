@@ -100,6 +100,18 @@ fi
 AC_MSG_RESULT($amd64)
 AM_CONDITIONAL(BUILD_AMD64, test x$amd64 = xyes)
 
+AC_ARG_ENABLE([thread-local],
+   [AC_HELP_STRING([--enable-thread-local], [enable thread-local contexts @<:@default=no@:>@])],
+   [enable_thread_local=yes],
+   [enable_thread_local=no])
+
+AC_MSG_CHECKING(whether to enable thread-local contexts)
+if test x$enable_thread_local = xyes; then
+  AC_DEFINE(DO_THREAD_LOCAL, 1, [enabling thread-local contexts])
+fi
+AC_MSG_RESULT($enable_thread_local)
+AM_CONDITIONAL(BUILD_THREAD_LOCAL, test x$enable_thread_local = xyes)
+
 # check for freetype
 AC_ARG_WITH(freetype-config,
   [AC_HELP_STRING([--with-freetype-config], [use freetype-config specified])],
@@ -556,6 +568,7 @@ echo "Use X86 MMX for speed.....: $mmx"
 echo "Use AMD64 for speed.......: $amd64"
 echo
 echo "Use visibility hiding.....: $enable_visibility_hiding"
+echo "Enable thread local.......: $enable_thread_local"
 echo
 echo
 echo "Installation Path.........: $prefix"

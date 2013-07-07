@@ -3,7 +3,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-static FILE        *rgb_txt = NULL;
+static TLS FILE        *rgb_txt = NULL;
 
 static void
 xpm_parse_color(char *color, int *r, int *g, int *b)

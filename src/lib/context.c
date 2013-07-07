@@ -6,9 +6,9 @@
 #include "color.h"
 #include "rgba.h"
 
-static Context     *context = NULL;
-static int          max_context_count = 128;
-static int          context_counter = 0;
+static TLS Context     *context = NULL;
+static TLS int          max_context_count = 128;
+static TLS int          context_counter = 0;
 
 void
 __imlib_SetMaxContexts(int num)

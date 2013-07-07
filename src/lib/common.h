@@ -48,4 +48,11 @@ if ((y + h) > ((yy) + (hh))) {h = (hh) - (y - yy);}
 extern char *__XOS2RedirRoot(const char *);
 #endif
 
+#ifdef DO_THREAD_LOCAL
+#define TLS __thread
+#else
+#define TLS
+#endif
+
+
 #endif

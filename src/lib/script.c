@@ -30,7 +30,7 @@
 #define  D( str )
 #endif
 
-IVariable          *vars, *current_var, *curtail;
+TLS IVariable          *vars, *current_var, *curtail;
 
 static int
 __imlib_find_string(const char *haystack, const char *needle)

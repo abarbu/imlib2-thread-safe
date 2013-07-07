@@ -3,7 +3,7 @@
 
 #ifdef BUILD_X11
 
-extern DATA16       _max_colors;
+extern TLS DATA16   _max_colors;
 
 __hidden int        __imlib_XActualDepth(Display * d, Visual * v);
 __hidden Visual    *__imlib_BestVisual(Display * d, int screen,

@@ -15,18 +15,18 @@
 #include "rgbadraw.h"
 #include "rotate.h"
 
-FT_Library          ft_lib;
+TLS FT_Library          ft_lib;
 
 static int          imlib_hash_gen(const char *key);
 static int          imlib_list_alloc_error(void);
 
-static int          _imlib_hash_alloc_error = 0;
-static int          _imlib_list_alloc_error = 0;
+static TLS int          _imlib_hash_alloc_error = 0;
+static TLS int          _imlib_list_alloc_error = 0;
 
 void
 imlib_font_init(void)
 {
-   static int          initialised = 0;
+   static TLS int          initialised = 0;
    int                 error;
 
    if (initialised)

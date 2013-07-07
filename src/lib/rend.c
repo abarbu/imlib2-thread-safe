@@ -232,10 +232,10 @@ __imlib_generic_render(DATA32 * src, int jump, int w, int h, int dx, int dy,
      }
 }
 
-static Display     *disp = NULL;
-static GC           gc = NULL;
-static GC           gcm = NULL;
-static int          last_depth = 0;
+static TLS Display     *disp = NULL;
+static TLS GC           gc = NULL;
+static TLS GC           gcm = NULL;
+static TLS int          last_depth = 0;
 
 void
 __imlib_RenderDisconnect(Display * d)

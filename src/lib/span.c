@@ -31,7 +31,7 @@ do { \
    na = (tmp + (tmp >> 8)) >> 8; \
 } while (0)
 
-extern DATA8        pow_lut[256][256];
+extern TLS DATA8        pow_lut[256][256];
 
 /*   point drawing functions  */
 

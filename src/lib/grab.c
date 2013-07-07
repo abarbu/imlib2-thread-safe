@@ -9,8 +9,8 @@
 #include "grab.h"
 #include "ximage.h"
 
-static char         _x_err = 0;
-static DATA8        rtab[256], gtab[256], btab[256];
+static TLS char         _x_err = 0;
+static TLS DATA8        rtab[256], gtab[256], btab[256];
 
 static void
 Tmp_HandleXError(Display * d, XErrorEvent * ev)

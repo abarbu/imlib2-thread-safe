@@ -23,4 +23,10 @@
 	.size PR_(sym),.-PR_(sym); \
 	.align 8;
 
+#ifdef DO_THREAD_LOCAL
+#define POW_LUT_REL GOTTPOFF(%rip)
+#else
+#define POW_LUT_REL GOTPCREL(%rip)
+#endif
+
 #endif /* __ASM_H */

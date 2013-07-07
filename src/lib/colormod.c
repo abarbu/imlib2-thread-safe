@@ -6,7 +6,7 @@
 #include "image.h"
 #include "blend.h"
 
-static DATABIG      mod_count = 0;
+static TLS DATABIG   mod_count = 0;
 
 ImlibColorModifier *
 __imlib_CreateCmod(void)

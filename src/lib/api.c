@@ -120,10 +120,10 @@ struct _imlibcontextitem {
 };
 
 /* a stack of contexts -- only used by context-handling functions. */
-static ImlibContextItem *contexts = NULL;       /* (ImlibContext*) imlib_context_new(); */
+static TLS ImlibContextItem *contexts = NULL;       /* (ImlibContext*) imlib_context_new(); */
 
 /* this is the context all functions use rely on */
-static ImlibContext *ctx = NULL;        /* contexts->context; */
+static TLS ImlibContext *ctx = NULL;        /* contexts->context; */
 
 /* frees the given context including all its members */
 static void

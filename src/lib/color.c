@@ -4,8 +4,8 @@
 #include <X11/Xutil.h>
 #include "color.h"
 
-DATA8               _pal_type = 0;
-DATA16              _max_colors = 256;
+DATA8  TLS    _pal_type = 0;
+DATA16 TLS    _max_colors = 256;
 
 int
 __imlib_XActualDepth(Display * d, Visual * v)
